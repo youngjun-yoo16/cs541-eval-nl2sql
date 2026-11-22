@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sql-check-memory"
+version = "0.1.0"
+description = "Local DuckDB prototype for SQL checks learned from past mistakes"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["duckdb>=1.2,<2", "sqlglot>=26,<29"]
+
+[project.scripts]
+sql-check-memory = "sql_check_memory.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
