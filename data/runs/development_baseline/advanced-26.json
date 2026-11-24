@@ -1,0 +1,13 @@
+{
+  "id": "advanced-26",
+  "database_id": "concert_singer",
+  "question": "Show every stadium's name and its number of concerts, sorted by concert count from highest to lowest and then stadium name alphabetically.",
+  "reference_sql": "SELECT s.Name, COUNT(c.concert_ID) FROM stadium AS s LEFT JOIN concert AS c ON s.Stadium_ID = c.Stadium_ID GROUP BY s.Stadium_ID, s.Name ORDER BY COUNT(c.concert_ID) DESC, s.Name ASC",
+  "candidate_sql": "SELECT s.Name, COUNT(c.concert_ID) AS concert_count\nFROM stadium AS s\nLEFT JOIN concert AS c\n    ON c.Stadium_ID = CAST(s.Stadium_ID AS VARCHAR)\nGROUP BY s.Stadium_ID, s.Name\nORDER BY concert_count DESC, s.Name ASC;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.212,
+  "role": "development"
+}

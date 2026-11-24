@@ -1,0 +1,13 @@
+{
+  "id": "advanced-21",
+  "database_id": "concert_singer",
+  "question": "List each singer's name and number of concerts, but only for singers who performed in more than one concert.",
+  "reference_sql": "SELECT s.Name, COUNT(DISTINCT sic.concert_ID) FROM singer AS s JOIN singer_in_concert AS sic ON s.Singer_ID = sic.Singer_ID GROUP BY s.Singer_ID, s.Name HAVING COUNT(DISTINCT sic.concert_ID) > 1",
+  "candidate_sql": "SELECT s.Name, COUNT(DISTINCT sic.concert_ID) AS number_of_concerts\nFROM singer AS s\nJOIN singer_in_concert AS sic\n  ON s.Singer_ID = TRY_CAST(sic.Singer_ID AS BIGINT)\nGROUP BY s.Singer_ID, s.Name\nHAVING COUNT(DISTINCT sic.concert_ID) > 1;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.643,
+  "role": "development"
+}

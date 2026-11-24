@@ -1,0 +1,13 @@
+{
+  "id": "advanced-24",
+  "database_id": "concert_singer",
+  "question": "Which concerts had more singers performing than the average number of singers per concert?",
+  "reference_sql": "WITH concert_counts AS (SELECT c.concert_ID, c.concert_Name, COUNT(DISTINCT sic.Singer_ID) AS singer_count FROM concert AS c LEFT JOIN singer_in_concert AS sic ON c.concert_ID = sic.concert_ID GROUP BY c.concert_ID, c.concert_Name) SELECT concert_Name FROM concert_counts WHERE singer_count > (SELECT AVG(singer_count) FROM concert_counts)",
+  "candidate_sql": "WITH singer_counts AS (\n    SELECT\n        c.concert_ID,\n        c.concert_Name,\n        COUNT(DISTINCT sic.Singer_ID) AS singer_count\n    FROM concert AS c\n    LEFT JOIN singer_in_concert AS sic\n        ON c.concert_ID = sic.concert_ID\n    GROUP BY c.concert_ID, c.concert_Name\n)\nSELECT concert_Name\nFROM singer_counts\nWHERE singer_count > (SELECT AVG(singer_count) FROM singer_counts);",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 5.153,
+  "role": "development"
+}

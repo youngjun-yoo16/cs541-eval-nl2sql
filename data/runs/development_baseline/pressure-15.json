@@ -1,0 +1,13 @@
+{
+  "id": "pressure-15",
+  "database_id": "concert_singer",
+  "question": "List the names of singers who performed in at least one concert.",
+  "reference_sql": "SELECT DISTINCT s.Name FROM singer AS s JOIN singer_in_concert AS sic ON s.Singer_ID = sic.Singer_ID",
+  "candidate_sql": "SELECT s.Name\nFROM singer AS s\nWHERE EXISTS (\n    SELECT 1\n    FROM singer_in_concert AS sic\n    JOIN concert AS c ON c.concert_ID = sic.concert_ID\n    WHERE sic.Singer_ID = CAST(s.Singer_ID AS VARCHAR)\n);",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.32,
+  "role": "development"
+}

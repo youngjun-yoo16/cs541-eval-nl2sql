@@ -1,0 +1,13 @@
+{
+  "id": "pressure-13",
+  "database_id": "concert_singer",
+  "question": "Which stadiums hosted at least one concert? Show each stadium's location and name once.",
+  "reference_sql": "SELECT DISTINCT s.Location, s.Name FROM stadium AS s JOIN concert AS c ON s.Stadium_ID = c.Stadium_ID",
+  "candidate_sql": "SELECT DISTINCT s.Location, s.Name\nFROM stadium AS s\nWHERE EXISTS (\n    SELECT 1\n    FROM concert AS c\n    WHERE c.Stadium_ID = CAST(s.Stadium_ID AS VARCHAR)\n);",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.472,
+  "role": "development"
+}

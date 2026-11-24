@@ -1,0 +1,254 @@
+[
+  {
+    "id": "advanced-21",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-22",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-23",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-24",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-25",
+    "original_match": false,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-26",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-27",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-28",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-29",
+    "original_match": false,
+    "rescored_match": false,
+    "evidence": "Candidate results differ from the reference results."
+  },
+  {
+    "id": "advanced-30",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-31",
+    "original_match": false,
+    "rescored_match": false,
+    "evidence": "Candidate results differ from the reference results."
+  },
+  {
+    "id": "advanced-32",
+    "original_match": false,
+    "rescored_match": false,
+    "evidence": "Candidate results differ from the reference results."
+  },
+  {
+    "id": "advanced-33",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-34",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-35",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-36",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-37",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-38",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "advanced-39",
+    "original_match": false,
+    "rescored_match": false,
+    "evidence": "Candidate results differ from the reference results."
+  },
+  {
+    "id": "advanced-40",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-01",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-02",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-03",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-04",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-05",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-06",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-07",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-08",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-09",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-10",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-11",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-12",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-13",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-14",
+    "original_match": false,
+    "rescored_match": false,
+    "evidence": "Candidate results differ from the reference results."
+  },
+  {
+    "id": "pressure-15",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-16",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-17",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-18",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-19",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "pressure-20",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "spider-dev-oldest-singer",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  },
+  {
+    "id": "spider-dev-youngest-singer",
+    "original_match": true,
+    "rescored_match": true,
+    "evidence": "Execution results match."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "id": "advanced-23",
+  "database_id": "concert_singer",
+  "question": "What is the average number of singers per concert, including concerts with no listed performers?",
+  "reference_sql": "WITH concert_counts AS (SELECT c.concert_ID, COUNT(DISTINCT sic.Singer_ID) AS singer_count FROM concert AS c LEFT JOIN singer_in_concert AS sic ON c.concert_ID = sic.concert_ID GROUP BY c.concert_ID) SELECT AVG(singer_count) FROM concert_counts",
+  "candidate_sql": "SELECT AVG(singer_count) AS average_singers_per_concert\nFROM (\n    SELECT c.concert_ID, COUNT(DISTINCT sic.Singer_ID) AS singer_count\n    FROM concert AS c\n    LEFT JOIN singer_in_concert AS sic\n        ON c.concert_ID = sic.concert_ID\n    GROUP BY c.concert_ID\n) AS concert_counts;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.864,
+  "role": "development"
+}

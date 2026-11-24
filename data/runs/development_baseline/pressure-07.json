@@ -1,0 +1,13 @@
+{
+  "id": "pressure-07",
+  "database_id": "concert_singer",
+  "question": "How many different countries are the singers from?",
+  "reference_sql": "SELECT COUNT(DISTINCT Country) FROM singer",
+  "candidate_sql": "SELECT COUNT(DISTINCT Country) AS country_count\nFROM singer;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.203,
+  "role": "development"
+}

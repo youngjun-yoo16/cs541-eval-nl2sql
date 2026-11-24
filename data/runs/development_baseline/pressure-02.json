@@ -1,0 +1,13 @@
+{
+  "id": "pressure-02",
+  "database_id": "concert_singer",
+  "question": "List all singer names in alphabetical order.",
+  "reference_sql": "SELECT Name FROM singer ORDER BY Name ASC",
+  "candidate_sql": "SELECT Name\nFROM singer\nORDER BY Name ASC;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.266,
+  "role": "development"
+}

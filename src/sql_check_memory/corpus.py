@@ -113,7 +113,7 @@ def _queries_are_equivalent(
     except Exception as exc:
         return False, f"Execution error: {exc}"
 
-    reference_is_ordered = reference_tree.find(exp.Order) is not None
+    reference_is_ordered = reference_tree.args.get("order") is not None
     if reference_is_ordered:
         equivalent = candidate_rows == reference_rows
     else:

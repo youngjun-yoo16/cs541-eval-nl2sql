@@ -1,0 +1,13 @@
+{
+  "id": "advanced-36",
+  "database_id": "concert_singer",
+  "question": "List concert names and the locations of the stadiums where they took place at Somerset Park.",
+  "reference_sql": "SELECT c.concert_Name, s.Location FROM concert AS c JOIN stadium AS s ON c.Stadium_ID = CAST(s.Stadium_ID AS VARCHAR) WHERE s.Name = 'Somerset Park'",
+  "candidate_sql": "SELECT c.concert_Name, s.Location\nFROM concert AS c\nJOIN stadium AS s\n  ON c.Stadium_ID = CAST(s.Stadium_ID AS VARCHAR)\nWHERE s.Name = 'Somerset Park';",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.148,
+  "role": "development"
+}

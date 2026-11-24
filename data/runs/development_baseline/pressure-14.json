@@ -1,0 +1,13 @@
+{
+  "id": "pressure-14",
+  "database_id": "concert_singer",
+  "question": "For each concert, how many singers performed? Include concerts with no listed performers.",
+  "reference_sql": "SELECT c.concert_Name, COUNT(DISTINCT sic.Singer_ID) FROM concert AS c LEFT JOIN singer_in_concert AS sic ON c.concert_ID = sic.concert_ID GROUP BY c.concert_ID, c.concert_Name",
+  "candidate_sql": "SELECT\n    c.concert_ID,\n    c.concert_Name,\n    COUNT(sic.Singer_ID) AS singer_count\nFROM concert AS c\nLEFT JOIN singer_in_concert AS sic\n    ON sic.concert_ID = c.concert_ID\nGROUP BY c.concert_ID, c.concert_Name;",
+  "execution_match": false,
+  "evaluation_evidence": "Candidate results differ from the reference results.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.673,
+  "role": "development"
+}

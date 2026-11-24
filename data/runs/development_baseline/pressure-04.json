@@ -1,0 +1,13 @@
+{
+  "id": "pressure-04",
+  "database_id": "concert_singer",
+  "question": "What song did the youngest singer release, and in what year?",
+  "reference_sql": "SELECT Song_Name, Song_release_year FROM singer ORDER BY Age ASC LIMIT 1",
+  "candidate_sql": "SELECT Song_Name, Song_release_year\nFROM singer\nWHERE Age = (SELECT MIN(Age) FROM singer);",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.332,
+  "role": "development"
+}

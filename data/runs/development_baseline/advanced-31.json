@@ -1,0 +1,13 @@
+{
+  "id": "advanced-31",
+  "database_id": "concert_singer",
+  "question": "For each concert, show its name and the number of different singer countries represented among its performers, including concerts with none.",
+  "reference_sql": "SELECT c.concert_ID, c.concert_Name, COUNT(DISTINCT s.Country) FROM concert AS c LEFT JOIN singer_in_concert AS sic ON c.concert_ID = sic.concert_ID LEFT JOIN singer AS s ON sic.Singer_ID = s.Singer_ID GROUP BY c.concert_ID, c.concert_Name",
+  "candidate_sql": "SELECT\n    c.concert_Name,\n    COUNT(DISTINCT s.Country) AS country_count\nFROM concert AS c\nLEFT JOIN singer_in_concert AS sc\n    ON sc.concert_ID = c.concert_ID\nLEFT JOIN singer AS s\n    ON sc.Singer_ID = CAST(s.Singer_ID AS VARCHAR)\nGROUP BY c.concert_ID, c.concert_Name;",
+  "execution_match": false,
+  "evaluation_evidence": "Candidate results differ from the reference results.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.618,
+  "role": "development"
+}

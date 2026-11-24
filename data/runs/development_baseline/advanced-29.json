@@ -1,0 +1,13 @@
+{
+  "id": "advanced-29",
+  "database_id": "concert_singer",
+  "question": "Which singer performed in the greatest number of different concerts?",
+  "reference_sql": "SELECT s.Name FROM singer AS s JOIN singer_in_concert AS sic ON s.Singer_ID = sic.Singer_ID GROUP BY s.Singer_ID, s.Name ORDER BY COUNT(DISTINCT sic.concert_ID) DESC LIMIT 1",
+  "candidate_sql": "SELECT s.Singer_ID, s.Name, COUNT(DISTINCT sic.concert_ID) AS concert_count\nFROM singer AS s\nJOIN singer_in_concert AS sic\n  ON sic.Singer_ID = CAST(s.Singer_ID AS VARCHAR)\nGROUP BY s.Singer_ID, s.Name\nQUALIFY DENSE_RANK() OVER (ORDER BY COUNT(DISTINCT sic.concert_ID) DESC) = 1",
+  "execution_match": false,
+  "evaluation_evidence": "Candidate results differ from the reference results.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.529,
+  "role": "development"
+}

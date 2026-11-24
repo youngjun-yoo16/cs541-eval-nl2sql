@@ -1,0 +1,13 @@
+{
+  "id": "advanced-38",
+  "database_id": "concert_singer",
+  "question": "Which singers performed in concerts held in 2014? List each singer once.",
+  "reference_sql": "SELECT DISTINCT s.Name FROM singer AS s JOIN singer_in_concert AS sic ON s.Singer_ID = sic.Singer_ID JOIN concert AS c ON sic.concert_ID = c.concert_ID WHERE c.Year = '2014'",
+  "candidate_sql": "SELECT DISTINCT s.Name\nFROM singer AS s\nJOIN singer_in_concert AS sic\n  ON sic.Singer_ID = CAST(s.Singer_ID AS VARCHAR)\nJOIN concert AS c\n  ON c.concert_ID = sic.concert_ID\nWHERE c.Year = '2014';",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.312,
+  "role": "development"
+}

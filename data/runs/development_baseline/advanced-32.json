@@ -1,0 +1,13 @@
+{
+  "id": "advanced-32",
+  "database_id": "concert_singer",
+  "question": "Which concerts had at least three different singers performing?",
+  "reference_sql": "SELECT c.concert_Name FROM concert AS c JOIN singer_in_concert AS sic ON c.concert_ID = sic.concert_ID GROUP BY c.concert_ID, c.concert_Name HAVING COUNT(DISTINCT sic.Singer_ID) >= 3",
+  "candidate_sql": "SELECT c.concert_ID, c.concert_Name\nFROM concert AS c\nJOIN singer_in_concert AS sic\n  ON sic.concert_ID = c.concert_ID\nGROUP BY c.concert_ID, c.concert_Name\nHAVING COUNT(DISTINCT sic.Singer_ID) >= 3;",
+  "execution_match": false,
+  "evaluation_evidence": "Candidate results differ from the reference results.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.215,
+  "role": "development"
+}

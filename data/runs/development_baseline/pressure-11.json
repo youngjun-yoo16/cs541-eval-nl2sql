@@ -1,0 +1,13 @@
+{
+  "id": "pressure-11",
+  "database_id": "concert_singer",
+  "question": "What are the names of concerts that took place in 2014?",
+  "reference_sql": "SELECT concert_Name FROM concert WHERE Year = '2014'",
+  "candidate_sql": "SELECT concert_Name\nFROM concert\nWHERE Year = '2014';",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.102,
+  "role": "development"
+}

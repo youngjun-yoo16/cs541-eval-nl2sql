@@ -1,0 +1,13 @@
+{
+  "id": "advanced-37",
+  "database_id": "concert_singer",
+  "question": "For each concert year, how many concerts were held and how many distinct singers performed?",
+  "reference_sql": "SELECT c.Year, COUNT(DISTINCT c.concert_ID), COUNT(DISTINCT sic.Singer_ID) FROM concert AS c LEFT JOIN singer_in_concert AS sic ON c.concert_ID = sic.concert_ID GROUP BY c.Year",
+  "candidate_sql": "SELECT\n    c.Year,\n    COUNT(DISTINCT c.concert_ID) AS concert_count,\n    COUNT(DISTINCT s.Singer_ID) AS distinct_singer_count\nFROM concert AS c\nLEFT JOIN singer_in_concert AS sic\n    ON c.concert_ID = sic.concert_ID\nLEFT JOIN singer AS s\n    ON TRY_CAST(sic.Singer_ID AS BIGINT) = s.Singer_ID\nGROUP BY c.Year\nORDER BY c.Year;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.718,
+  "role": "development"
+}

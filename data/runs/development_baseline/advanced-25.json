@@ -1,0 +1,13 @@
+{
+  "id": "advanced-25",
+  "database_id": "concert_singer",
+  "question": "For each country, show the youngest singer's name and age.",
+  "reference_sql": "SELECT Country, Name, Age FROM (SELECT Country, Name, Age, ROW_NUMBER() OVER (PARTITION BY Country ORDER BY Age ASC, Singer_ID ASC) AS row_num FROM singer) AS ranked WHERE row_num = 1",
+  "candidate_sql": "SELECT Country, Name, Age\nFROM singer\nQUALIFY Age = MIN(Age) OVER (PARTITION BY Country)\nORDER BY Country, Name;",
+  "execution_match": false,
+  "evaluation_evidence": "Candidate results differ from the reference results.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 3.68,
+  "role": "development"
+}

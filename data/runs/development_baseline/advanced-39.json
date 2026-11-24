@@ -1,0 +1,13 @@
+{
+  "id": "advanced-39",
+  "database_id": "concert_singer",
+  "question": "For every stadium, show how many concerts it hosted in 2014, including stadiums with zero.",
+  "reference_sql": "SELECT s.Name, COUNT(c.concert_ID) FROM stadium AS s LEFT JOIN concert AS c ON CAST(s.Stadium_ID AS VARCHAR) = c.Stadium_ID AND c.Year = '2014' GROUP BY s.Stadium_ID, s.Name",
+  "candidate_sql": "SELECT\n    s.Stadium_ID,\n    s.Name,\n    COUNT(c.concert_ID) AS concert_count\nFROM stadium AS s\nLEFT JOIN concert AS c\n    ON TRY_CAST(c.Stadium_ID AS BIGINT) = s.Stadium_ID\n    AND c.Year = '2014'\nGROUP BY s.Stadium_ID, s.Name\nORDER BY s.Stadium_ID;",
+  "execution_match": false,
+  "evaluation_evidence": "Candidate results differ from the reference results.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.573,
+  "role": "development"
+}

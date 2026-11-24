@@ -40,8 +40,11 @@ def retrieve(
     top_k: int = 5,
 ) -> list[CheckRecord]:
     """Rank stored checks by database, question terms, tables, and columns."""
-    combined_text = f"{question} {sql}".lower()
-    query_terms = set(WORD_PATTERN.findall(combined_text))
+    # Pad token boundaries so a phrase matches complete, adjacent words.
+    texts = [
+        " " + " ".join(WORD_PATTERN.findall(value.lower())) + " "
+        for value in (question, sql)
+    ]
     query_tables, query_columns = sql_features(sql)
     ranked_checks: list[tuple[float, CheckRecord]] = []
 
@@ -58,10 +61,18 @@ def retrieve(
             str(value).lower() for value in applicability.get("tables", [])
         }
         required_columns = {
-            str(value).lower() for value in applicability.get("columns", [])
+            str(value).lower().rsplit(".", 1)[-1]
+            for value in applicability.get("columns", [])
         }
         required_terms = {
-            str(value).lower() for value in applicability.get("terms", [])
+            " ".join(WORD_PATTERN.findall(str(value).lower()))
+            for value in applicability.get("terms", [])
+        }
+
+        required_terms.discard("")
+        query_terms = {
+            term for term in required_terms
+            if any(f" {term} " in text for text in texts)
         }
 
         score = 0.0

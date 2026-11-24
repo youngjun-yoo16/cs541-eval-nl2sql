@@ -1,0 +1,13 @@
+{
+  "id": "pressure-01",
+  "database_id": "concert_singer",
+  "question": "List the names of all singers.",
+  "reference_sql": "SELECT Name FROM singer",
+  "candidate_sql": "SELECT Name\nFROM singer;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 1.74,
+  "role": "development"
+}

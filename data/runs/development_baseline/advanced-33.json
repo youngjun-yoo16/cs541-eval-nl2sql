@@ -1,0 +1,13 @@
+{
+  "id": "advanced-33",
+  "database_id": "concert_singer",
+  "question": "List each pair of singers who performed together in at least one concert. Do not include a singer paired with themselves.",
+  "reference_sql": "SELECT DISTINCT s1.Name, s2.Name FROM singer_in_concert AS sc1 JOIN singer_in_concert AS sc2 ON sc1.concert_ID = sc2.concert_ID AND sc1.Singer_ID < sc2.Singer_ID JOIN singer AS s1 ON sc1.Singer_ID = s1.Singer_ID JOIN singer AS s2 ON sc2.Singer_ID = s2.Singer_ID",
+  "candidate_sql": "SELECT DISTINCT\n    s1.Name AS singer_1,\n    s2.Name AS singer_2\nFROM singer_in_concert AS sc1\nJOIN singer_in_concert AS sc2\n    ON sc1.concert_ID = sc2.concert_ID\nJOIN singer AS s1\n    ON sc1.Singer_ID = CAST(s1.Singer_ID AS VARCHAR)\nJOIN singer AS s2\n    ON sc2.Singer_ID = CAST(s2.Singer_ID AS VARCHAR)\nWHERE s1.Singer_ID < s2.Singer_ID;",
+  "execution_match": true,
+  "evaluation_evidence": "Execution results match.",
+  "model": "gpt-6.1-sol",
+  "base_url": "https://api.openai.com/v1",
+  "elapsed_seconds": 2.919,
+  "role": "development"
+}
